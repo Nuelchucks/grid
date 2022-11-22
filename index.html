@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Page</title>
+    <script 
+    src="https://kit.fontawesome.com/b95b60560a.js" crossorigin="anonymous">
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(231, 235, 235);
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(9, 3, 15);
+            padding: 20px 0;
+        }
+        .head {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-shadow: 0 0 30px white;
+            margin-top: 0.7%;
+        }
+        .logo {
+            display: inline;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .header {
+            position: relative;
+            margin-top: 1.1%;
+        }
+        a {
+            text-decoration: none;
+            padding: 0px 20px;
+            color: white;
+            font-size: 17px;
+        }
+        .service {
+            float: left;
+            overflow: hidden;
+        }
+        .service1 {
+            float: left;
+            overflow: hidden;
+        }
+        .drop-down {
+            display: none;
+            background-color: rgb(9, 3, 15);
+            color: white;
+            position: absolute;
+            border-radius: 2px;
+            margin-top: 1%;
+            min-width: 100px;
+            box-shadow: 1px 1px 2px 0px #ddd;
+            z-index: 1;
+        }
+        .drop-down1 {
+            display: none;
+            background-color: rgb(9, 3, 15);
+            color: white;
+            position: absolute;
+            left: 15px;
+            top: 66%;
+            border-radius: 2px;
+            width: 110px;
+            box-shadow: 1px 1px 2px 0px #ddd;
+          
+        }
+        .drop-down a {
+            float: none;
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+        .drop-down1 a {
+            float: none;
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+        .drop-down a:hover {
+            background-color: beige;
+            color: black;
+            width: auto;
+        }
+        .drop-down1 a:hover {
+            background-color: beige;
+            color: red;
+        }
+        .service:hover .drop-down {
+            display: block;
+        }
+        .service1:hover .drop-down1 {
+            display: block;
+            width: auto;
+            margin-left: 100px;
+        }
+        .service1 a:nth-child(1) {
+            width: 115px;
+            
+        }
+        
+        section {
+            position: relative;
+            color: black;
+            margin: 7px 8px;
+            display: grid;
+            grid-template-columns: 35% 35% 29%;
+            grid-gap: 6px;
+            
+        }
+        .main {
+            padding: 10px;
+            height: 200px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .main2 {
+            padding: 10px;
+            height: 500px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .main3 {
+            padding: 10px;
+            height: 705px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .main4 {
+            padding: 10px;
+            position: absolute;
+            width: 35%;
+            height: 500px;
+            margin-top: 15.5%;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .main5 {
+            padding: 10px;
+            position: absolute;
+            margin-left: 35.5%;
+            margin-top: 37.9%;
+            width: 35%;
+            height: 200px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        textarea {
+            width: 450px;
+            height: 140px;
+            border: none;
+            outline: none;
+        }
+        ::placeholder {
+            color: black;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .icon {
+            position: relative;
+            bottom: 5%;
+        }
+        .icon1 {
+            position: relative;
+            top: 20%;
+        }
+
+        #btn {
+            float: right;
+            border: none;
+            border-radius: 2px;
+            background-color: blueviolet;
+            color: white;
+            padding: 9px;
+            margin-top: -3.5%;
+        }
+        #btn:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+        .nav2 {
+            display: flex;
+        }
+        .date {
+            float: right;
+            margin-left: 65%;
+            margin-top: 5px;
+            font-size: 13px;
+        }
+        .title {
+            position: absolute;
+            margin-left: 15%;
+            
+        }
+        .sub {
+            display: block;
+        }
+        .pg1 {
+            margin-top: 6%;
+        }
+        .image1 {
+            margin-top: 9%;
+        }
+        .footer {
+            margin-top: 2%;
+        }
+        #comment {
+            color: blue;
+            font-size: 15px;
+            float: right;
+        }
+        .title1 {
+            position: absolute;
+            margin-left: 5%;
+        }
+        .pg2 {
+            text-align: justify;
+            margin-top: 6%;
+            color: rgb(58, 14, 99);
+        }
+        #comment2 {
+            color: blue;
+            margin-top: 1%;
+            float: right;
+            font-size: 15px;
+        }
+        .title2 {
+            position: absolute;
+            margin-left: 14%;
+        }
+        #comment3 {
+            color: blue;
+            margin-top: 11%;
+            float: right;
+            font-size: 15px;
+        }
+        .option1 {
+            display: flex;
+            margin-top: 10%;
+        }
+        .suggest {
+            color: rgb(44, 9, 77);
+            font-size: 17px;
+        }
+        .choice {
+            position: absolute;
+            margin-left: 5%;
+        }
+        .pg {
+            display: block;
+        }
+        #btn1 {
+            border: none;
+            border-radius: 30%;
+            background-color: blueviolet;
+            color: white;
+            padding: 5px 15px;
+            margin-top: 11%;
+        }
+        #btn1:hover {
+            background-color: red;
+            cursor: pointer;
+        }
+        .option2 {
+            display: flex;
+            margin-top: 15%;
+        }
+        .option3 {
+            display: flex;
+            margin-top: 15%;
+        }
+        .option4 {
+            display: flex;
+            margin-top: 15%;
+        }
+        .option5 {
+            display: flex;
+            margin-top: 15%;
+        }
+        .option6 {
+            display: flex;
+            margin-top: 15%;
+        }
+        #more {
+            background-color: blueviolet;
+            color: white;
+            width: 100%;
+            height: 40px;
+            padding: 5px 15px;
+            margin-top: 20%;
+            border: none;
+            outline: none;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 35% 35% 29%;;
+                gap: 5px;
+            }
+            .header {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 7px;
+            }
+            .header {
+                display: block;
+            }
+        }
+        @media (max-width: 560px) {
+            .container {
+                display: block;
+                grid-template-columns: 1fr;
+                gap: 3px;
+            }
+            .pg2 {
+                overflow: hidden;
+            }
+            .header {
+                display: none;
+            }
+            .image1 {
+                width: 100%;
+            }
+            .choice {
+                margin-left: 20%;
+            }
+            .title1 {
+                margin-left: 19%;
+            }
+            textarea {
+                width: 100%;
+            }
+            .main5 {
+                display: block;
+                width: 100%;
+                height: auto;
+                right: 1%;
+                top: 1760px;
+                
+            }
+            .main4 {
+                display: block;
+                width: auto;
+                top: 1350px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+    <span class="head">Chuck Cars</span>
+    <nav class="header">
+        <a href="#">Home</a>
+    <span class="service">
+        <a href="#">Services</a>
+        <span class="drop-down">
+            <a href="#">Purchase</a>
+            <a href="#">Merchant</a>
+        <span class="service1">
+            <a href="#" class="a">Order</a>
+            <span class="drop-down1">
+                <a href="#">Consumer</a>
+                <a href="#">Retailer</a>
+                <a href="#">Wholesaler</a>
+            </span>
+        </span>
+        </span>
+    </span>
+        <a href="#">Blog</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </nav>
+    <img src="./images/logo 1.png" class="logo" width="50px" height="50px">
+    </header>
+
+    <section class="container">
+
+        <div class="main">
+            <textarea placeholder="What's on your mind?"></textarea>
+            <br><br>
+          <span class="icon"> <i class="fa-solid fa-face-smile" style="padding-right: 3%; top: 30px;"></i> <i class="fa-solid fa-pen" style="padding-right: 3%;"></i> <i class="fa-solid fa-camera"></i> </span><button type="button" id="btn">POST</button>
+        </div>
+
+        <div class="main2">
+            <nav class="nav2">
+                <img src="./images/choose.jpg" width="40px" height="40px">
+                <p class="title1"> <b>Chuck Cars. LLC</b>
+                    <span class="sub">Mercedes</span>
+                </p>
+                <p class="date">July 22nd, 2020</p>
+                </nav>
+                <p class="pg2"><a href="#" class="pg2">
+                https://wedesignautocarsforelites124789/panelbrooks/ <br>
+                llc/mainnet.com.ng</a></p>
+
+                <img src="./images/main pic2.jpg" class="image1" width="430px" height="200px">
+
+                <span class="icon1">
+                    <i class="fa-solid fa-face-smile" style="padding-right: 3%; top: 30px;"></i>
+                    <i class="fa-solid fa-pen" style="padding-right: 3%;"></i>
+                    <i class="fa-solid fa-camera"></i>
+                    <a href="#" id="comment2">Add a comment</a>
+                </span>
+
+        </div>
+        <div class="main3">
+            <h2 class="suggest">Suggestions</h2>
+            <nav class="option1">
+                <img src="./images/opt1.jpg" width="40px" height="40px">
+                <p class="choice"> <b>Voltmeter</b>
+                    <span class="pg">Speed</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+            <nav class="option2">
+                <img src="./images/opt2.jpg" width="40px" height="40px">
+                <p class="choice"> <b>Honda</b>
+                    <span class="pg">wagen</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+            <nav class="option3">
+                <img src="./images/opt3.jpg" width="40px" height="40px">
+                <p class="choice"> <b>Lexus</b>
+                    <span class="pg">Tires</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+            <nav class="option4">
+                <img src="./images/opt4.jpg" width="40px" height="40px">
+                <p class="choice"> <b>Hulksagen</b>
+                    <span class="pg">Strength</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+            <nav class="option5">
+                <img src="./images/opt5.jpg" width="40px" height="40px">
+                <p class="choice"> <b>Toyota</b>
+                    <span class="pg">Vast</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+            <nav class="option6">
+                <img src="./images/opt6.png" width="40px" height="40px">
+                <p class="choice"> <b>Machines</b>
+                    <span class="pg">Robots</span>
+                    <button type="button" id="btn1">Add</button>
+                </p>
+            </nav>
+
+            <button type="button" id="more">See more</button>
+        </div>
+
+        <div class="main4">
+            <nav class="nav2">
+                <img src="./images/5356224.jpg"  width="40px" height="40px">
+                <p class="title"> <b>Mobile Luxury</b>
+                    <span class="sub">Vehicles</span>
+                </p>
+                <p class="date">March 22nd, 2020</p>
+                </nav>
+            <p class="pg1">The Chucks Cars - Another dashing company with a lot of <br>
+            and trending mobile inventions that are reliable.</p>
+
+            <img src="./images/main pic.jpg" class="image1" width="430px" height="200px">
+
+            <div class="footer">
+                <p class="foot"><b>Features</b> <br>
+                <span class="subfoot">This company features the best cars of the season. The fast
+                    and reliable car experience that you will get from this company is top-notch.
+                </span></p> <br>
+                <a href="#" id="comment">Add a comment</a>
+            </div>
+        </div>
+        <div class="main5">
+            <nav class="nav2">
+                <img src="./images/customer.png" width="40px" height="40px">
+                <p class="title2"> <b>Admin Personnels</b>
+                    <span class="sub">Contact</span>
+                </p>
+                <p class="date">August 22nd, 2020</p>
+                </nav>
+                <p class="pg1">The Mobile Admins - Another dashing company with a lot of <br>
+                    qualified admins to commit to your needs.</p>
+                    <a href="#" id="comment3">Add a comment</a>
+        </div>
+        
+
+    </section>
+</body>
+</html>
